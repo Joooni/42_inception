@@ -19,3 +19,5 @@ fclean: down
 	sudo rm -Rf /home/${USER}/data/wp
 	mkdir /home/${USER}/data/db
 	mkdir /home/${USER}/data/wp
+
+re: fclean up

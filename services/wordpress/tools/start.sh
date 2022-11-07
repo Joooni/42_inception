@@ -26,8 +26,8 @@ mv wp-cli.phar /usr/local/bin/wp;
 cd /var/www/html/wordpress;
 
 # static website
-	mkdir -p /var/www/html/wordpress/mysite;
-	mv /var/www/index.html /var/www/html/wordpress/mysite/index.html;
+#	mkdir -p /var/www/html/wordpress/mysite;
+#	mv /var/www/index.html /var/www/html/wordpress/mysite/index.html;
 
 wp core download --allow-root;
 mv /var/www/wp-config.php /var/www/html/wordpress;
@@ -67,15 +67,15 @@ wp theme install inspiro --activate --allow-root
 #     sed -i "43i define( 'WP_REDIS_READ_TIMEOUT', 1 );"          wp-config.php
 #     sed -i "44i define( 'WP_REDIS_DATABASE', 0 );\n"            wp-config.php
 
-    wp plugin install redis-cache --activate --allow-root
-    wp plugin update --all --allow-root
+#    wp plugin install redis-cache --activate --allow-root
+#    wp plugin update --all --allow-root
 
 echo "Wordpress: set up!"
 else
 echo "Wordpress: is already set up!"
 fi
 
-wp redis enable --allow-root
+#wp redis enable --allow-root
 
 echo "Wordpress started on :9000"
 /usr/sbin/php-fpm7.3 -F
