@@ -6,6 +6,6 @@ RUN apt install -y nginx
 EXPOSE 3000
 
 COPY ./conf/nginx.conf /etc/nginx/sites-available/default
-COPY ./conf/index.html /var/www/html/index.html
+COPY ./conf/index.html /var/www/html/
 
 CMD nginx -g 'daemon off;'
