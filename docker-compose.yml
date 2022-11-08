@@ -65,6 +65,8 @@ services:
     build: ./services/bonus/vsftpd
     ports:
       - "21:21"
+      - "21100-21110:21100-21110"
+
     volumes:
       - wp:/var/www/html/wordpress
     networks:
