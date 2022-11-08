@@ -8,4 +8,6 @@ EXPOSE 443
 COPY ./conf/nginx.conf /etc/nginx/sites-enabled/default
 COPY ./tools/start.sh /var/www
 
-CMD bash /var/www/start.sh
+RUN /var/www/start.sh
+
+CMD nginx -g 'daemon off;'

@@ -26,4 +26,3 @@ fi
 
 # Run nginx
 # Nginx uses the daemon off directive to run in the foreground
-nginx -g 'daemon off;';

@@ -8,4 +8,6 @@ EXPOSE 9000
 COPY ./conf/www.conf /etc/php/7.3/fpm/pool.d
 COPY ./tools /var/www/
 
-CMD bash /var/www/start.sh
+RUN /var/www/start.sh
+
+CMD ["/usr/sbin/php-fpm7.3", "-F"]
