@@ -5,9 +5,9 @@ RUN apt install -y redis
 
 EXPOSE 6379
 
-RUN chmod +x /tools/start.sh
 COPY /tools/start.sh /var/www/start.sh
 
+RUN chmod +x /var/www/start.sh
 
 CMD /var/www/start.sh
 
