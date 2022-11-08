@@ -5,8 +5,10 @@ RUN apt install -y redis
 
 EXPOSE 6379
 
+RUN chmod +x /tools/start.sh
 COPY /tools/start.sh /var/www/start.sh
 
-RUN bash /var/www/start.sh
 
-CMD ["redis-server", "--protected-mode no"]
+CMD /var/www/start.sh
+
+#CMD ["redis-server", "--protected-mode no"]

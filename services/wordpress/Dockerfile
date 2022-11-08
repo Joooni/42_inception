@@ -6,8 +6,11 @@ RUN apt install -y php7.3 php-mysqli php-fpm curl sendmail
 EXPOSE 9000
 
 COPY ./conf/www.conf /etc/php/7.3/fpm/pool.d
-COPY ./tools /var/www/
 
-RUN /var/www/start.sh
+COPY /tools /var/www/
 
-CMD ["/usr/sbin/php-fpm7.3", "-F"]
+RUN chmod +x /var/www/start.sh
+
+CMD /var/www/start.sh
+
+# CMD ["/usr/sbin/php-fpm7.3", "-F"]

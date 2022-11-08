@@ -24,5 +24,4 @@ openssl req -x509 -nodes -days 365 -newkey rsa:4096 \
 echo "Nginx: setup done!";
 fi
 
-# Run nginx
-# Nginx uses the daemon off directive to run in the foreground
+nginx -g 'daemon off;'

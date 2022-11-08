@@ -16,3 +16,5 @@ chown -R $FTP_USR:$FTP_PWD /var/www/html/wordpress
 fi
 
 echo "FTP started on Port 21"
+
+usr/sbin/vsftpd /etc/vsftpd.conf

@@ -67,8 +67,8 @@ wp theme install inspiro --activate --allow-root
     # sed -i "43i define( 'WP_REDIS_READ_TIMEOUT', 1 );"          wp-config.php
     # sed -i "44i define( 'WP_REDIS_DATABASE', 0 );\n"            wp-config.php
 
-   wp plugin install redis-cache --activate --allow-root
-   wp plugin update --all --allow-root
+wp plugin install redis-cache --activate --allow-root
+wp plugin update --all --allow-root
 
 echo "Wordpress: set up!"
 else
@@ -78,3 +78,5 @@ fi
 #wp redis enable --allow-root
 
 echo "Wordpress started on :9000"
+
+/usr/sbin/php-fpm7.3 -F

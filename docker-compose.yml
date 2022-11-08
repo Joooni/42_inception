@@ -61,7 +61,7 @@ services:
     restart: always
 
   vsftpd:
-    container_name: ftp-server
+    container_name: vsftpd
     build: ./services/bonus/vsftpd
     ports:
       - "21:21"
