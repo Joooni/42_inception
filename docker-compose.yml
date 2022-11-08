@@ -51,6 +51,29 @@ services:
     networks:
       - inception
 
+  redis:
+    container_name: redis
+    build: ./services/bonus/redis
+    ports:
+      - "6379:6379"
+    networks:
+      - inception
+    restart: always
+
+  vsftpd:
+    container_name: ftp-server
+    build: ./services/bonus/vsftpd
+    ports:
+      - "21:21"
+    volumes:
+      - wp:/var/www/html/wordpress
+    networks:
+      - inception
+    restart: always
+    environment:
+      FTP_USR: ${FTP_USR}
+      FTP_PWD: ${FTP_PWD}
+
 volumes:
   db:
     name: db
