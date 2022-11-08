@@ -8,9 +8,10 @@ RUN apt install -y vsftpd
 
 EXPOSE 21
 
-RUN chmod +x /tools/start.sh
 COPY conf/vsftpd.conf /var/www/vsftpd.conf
-COPY tools/start.sh /var/www/start.sh
+COPY /tools/start.sh /var/www/start.sh
+
+RUN chmod +x /var/www/start.sh
 
 
 CMD /var/www/start.sh
