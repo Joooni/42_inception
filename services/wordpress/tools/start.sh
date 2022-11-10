@@ -44,7 +44,22 @@ echo "Wordpress: creating users..."
 # Password for the admin user. The default is a randomly generated string.
 #	--admin_email=<email>
 # Administrator's email address.
-wp core install --allow-root --url=${DOMAIN_NAME} --title=${WORDPRESS_NAME} --admin_user=${WORDPRESS_ROOT_LOGIN} --admin_password=${MYSQL_ROOT_PASSWORD} --admin_email=${WORDPRESS_ROOT_EMAIL};
+# wp		--allow-root core config \
+# 		--dbhost=${WORDPRESS_DB_HOST} \
+# 		--dbname=${WORDPRESS_DB_NAME} \
+# 		--dbuser=${WORDPRESS_DB_USER} \
+# 		--dbpass=${WORDPRESS_DB_PASSWORD} \
+# 		--locale=en_US \
+# 		--skip-check
+
+wp core install \
+		--allow-root \
+		--url=${DOMAIN_NAME} \
+		--title=${WORDPRESS_NAME} \
+		--admin_user=${WORDPRESS_ROOT_LOGIN} \
+		--admin_password=${WORDPRESS_ROOT_PASSWORD} \
+		--admin_email=${WORDPRESS_ROOT_EMAIL};
+
 # Creates a new user
 #	<user-login>
 # Username to create.
@@ -55,7 +70,13 @@ wp core install --allow-root --url=${DOMAIN_NAME} --title=${WORDPRESS_NAME} --ad
 # Possible values ​​include "administrator", "editor", "author", "contributor", "subscriber".
 #	[--user_pass=<password>]
 # User password. Default: randomly generated
-wp user create ${MYSQL_USER} ${WORDPRESS_USER_EMAIL} --user_pass=${MYSQL_PASSWORD} --role=author --allow-root;
+wp user create \
+		${WORDPRESS_USER_LOGIN} \
+		${WORDPRESS_USER_EMAIL} \
+		--user_pass=${WORDPRESS_USER_PASSWORD} \
+		--role=author \
+		--allow-root;
+
 # Theme for WordPress
 wp theme install inspiro --activate --allow-root
 
@@ -79,4 +100,4 @@ fi
 
 echo "Wordpress started on :9000"
 
-/usr/sbin/php-fpm7.3 -F
+exec "$@"

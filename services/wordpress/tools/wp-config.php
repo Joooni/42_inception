@@ -37,6 +37,8 @@ define( 'DB_CHARSET', 'utf8' );
 /** The database collate type. Don't change this if in doubt. */
 define( 'DB_COLLATE', '' );
 
+// allows posts without revisions, maybe also comments?
+define( 'WP_POST_REVISIONS', false );
 /**#@+
  * Authentication unique keys and salts.
  *

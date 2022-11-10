@@ -10,3 +10,14 @@ FLUSH PRIVILEGES;
 -- To change the authentication or database resource characteristics of a database user
 -- To allow a proxy server to connect as a client without authentication
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'RootBlueberry';
+
+
+-- for command help: http://g2pc1.bu.edu/~qzpeng/manual/MySQL%20Commands.htm
+-- for login:
+-- docker exec -it mariadb bash
+-- mysql; (will not work)
+-- mysql -u wordpress -psecret;
+-- show databases;
+-- use wordpress;
+-- show tables;
+-- exit;
