@@ -16,7 +16,7 @@ ALTER USER 'root'@'localhost' IDENTIFIED BY 'RootBlueberry';
 -- for login:
 -- docker exec -it mariadb bash
 -- mysql; (will not work)
--- mysql -u wordpress -psecret;
+-- mysql -u jsubel -pBLueberry;
 -- show databases;
 -- use wordpress;
 -- show tables;
