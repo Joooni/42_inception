@@ -60,22 +60,6 @@ services:
       - inception
     restart: always
 
-  vsftpd:
-    container_name: vsftpd
-    build: ./services/bonus/vsftpd
-    ports:
-      - "21:21"
-      - "21100-21110:21100-21110"
-
-    volumes:
-      - wp:/var/www/html/wordpress
-    networks:
-      - inception
-    restart: always
-    environment:
-      FTP_USR: ${FTP_USR}
-      FTP_PWD: ${FTP_PWD}
-
 volumes:
   db:
     name: db
