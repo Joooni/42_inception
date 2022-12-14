@@ -5,6 +5,9 @@ services:
     container_name: nginx
     build: ./services/nginx
     hostname: localhost
+    # wp:/var/www/html/wordpress
+      #   wordpress volume on the machine running the container
+      #   is bound to the /var/.. folder of the container
     volumes:
       - wp:/var/www/html/wordpress
     restart: always
