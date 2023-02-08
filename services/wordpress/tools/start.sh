@@ -74,14 +74,14 @@ wp user create \
 		${WORDPRESS_USER_LOGIN} \
 		${WORDPRESS_USER_EMAIL} \
 		--user_pass=${WORDPRESS_USER_PASSWORD} \
-		--role=author \
+		--role=contributor \
 		--allow-root;
 
 # Theme for WordPress
-wp theme install inspiro --activate --allow-root
+# wp theme install inspiro --activate --allow-root
 
 # enable redis cache
-    sed -i "40i define( 'WP_REDIS_HOST', '$REDIS_HOST' );"      wp-config.php
+    # sed -i "40i define( 'WP_REDIS_HOST', 'redis' );"      wp-config.php
     sed -i "41i define( 'WP_REDIS_PORT', 6379 );"               wp-config.php
     # sed -i "42i define( 'WP_REDIS_PASSWORD', '$REDIS_PWD' );"   wp-config.php
     sed -i "42i define( 'WP_REDIS_TIMEOUT', 1 );"               wp-config.php

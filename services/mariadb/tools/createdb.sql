@@ -20,4 +20,5 @@ ALTER USER 'root'@'localhost' IDENTIFIED BY 'RootBlueberry';
 -- show databases;
 -- use wordpress;
 -- show tables;
+-- SELECT * FROM tablename;
 -- exit;

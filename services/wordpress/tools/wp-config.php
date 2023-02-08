@@ -38,7 +38,6 @@ define( 'DB_CHARSET', 'utf8' );
 define( 'DB_COLLATE', '' );
 
 // allows posts without revisions, maybe also comments?
-define( 'WP_POST_REVISIONS', false );
 /**#@+
  * Authentication unique keys and salts.
  *
@@ -59,6 +58,13 @@ define('SECURE_AUTH_SALT', 'UeL1KL+_?)he4mh24q,.FbE^d5_OvS/+htgnz>W^5Kdg|iDe@T?O
 define('LOGGED_IN_SALT',   ',{(X*&Ebr~[WDbb+Rxz.;Eb|hLQ*R5c||X&]3 +i)Z*1|~zQc3ml4|,&v:quQ~b|');
 define('NONCE_SALT',       'vk;twpWe#.3,:tM+bAOIbYS3aPar;v& TMJ8!kW7-j=%?O_EN>4jP[O;4FEV+7xg');
 /**#@-*/
+
+/**
+ * enable caching by adding a cache key salt and a persistent cache for redis
+ */
+define('WP_CACHE_KEY_SALT', 'jsubel.42.fr');
+define('WP_REDIS_HOST', 'redis');
+define('WP_CACHE', true);
 
 /**
  * WordPress database table prefix.

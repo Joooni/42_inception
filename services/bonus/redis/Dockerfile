@@ -1,7 +1,7 @@
 FROM debian:buster
 
 RUN apt update
-RUN apt install -y redis
+RUN apt install -y redis-server php7.3-redis
 
 EXPOSE 6379
 
@@ -11,6 +11,6 @@ RUN chmod +x /var/www/start.sh
 
 ENTRYPOINT ["sh", "/var/www/start.sh"]
 
-#CMD ["redis-server", "--protected-mode no"]
+# CMD ["redis-server", "--protected-mode no"]
 
 #docker exec -it redis redis-cli monitor => should output 'OK'
