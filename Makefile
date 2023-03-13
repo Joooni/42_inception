@@ -11,6 +11,9 @@ down:
 ps:
 	docker-compose ps
 
+build:
+	docker-compose up -d --build
+
 fclean: down
 	@docker rmi -f $$(docker images -qa);\
 	docker volume rm $$(docker volume ls -q);\
