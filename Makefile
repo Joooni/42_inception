@@ -3,16 +3,16 @@ all: up
 up:
 	@mkdir -p /home/${USER}/data/db
 	@mkdir -p /home/${USER}/data/wp
-	docker-compose up -d
+	docker-compose -f srcs/docker-compose.yml up -d
 
 down:
-	docker-compose down
+	docker-compose -f srcs/docker-compose.yml down
 
 ps:
-	docker-compose ps
+	docker-compose -f srcs/docker-compose.yml ps
 
 build:
-	docker-compose up -d --build
+	docker-compose -f srcs/docker-compose.yml up -d --build
 
 fclean: down
 	@docker rmi -f $$(docker images -qa);\
